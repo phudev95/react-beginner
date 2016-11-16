@@ -1,5 +1,5 @@
 {
-  "name": "cotd",
+  "name": "react-beginner",
   "version": "0.0.1",
   "private": true,
   "devDependencies": {
@@ -26,5 +26,21 @@
   },
   "eslintConfig": {
     "extends": "./node_modules/react-scripts/config/eslint.js"
-  }
+  },
+  "description": "Learning React from reactforbeginners.com",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/phudev95/react-beginner.git"
+  },
+  "keywords": [
+    "react",
+    "es6"
+  ],
+  "author": "phudev95@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/phudev95/react-beginner/issues"
+  },
+  "homepage": "https://github.com/phudev95/react-beginner#readme"
 }
