@@ -1,4 +1,6 @@
 import React from 'react';
+
+// Components
 import Header from './Header';
 import Order from './Order';
 import Inventory from './Inventory';
