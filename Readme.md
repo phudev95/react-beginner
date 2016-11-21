@@ -1,3 +1,6 @@
+## Introduction
+> Link: [https://ns-zbunyvbzjy.now.sh/](https://ns-zbunyvbzjy.now.sh/)
+
 ## Setup
 ```
 1. clone source from github to local
@@ -11,6 +14,14 @@
 * npm run watch (Watching any file with ext *.styl have change)
 * npm run build (Deploy source code from development to production)
 * npm run eject (Eject all configs of react-scripts from black to white ^^)
+```
+
+
+## Deploy to now.sh
+> npm i -g now now-serve (If you not install it then run this command script, otherwise you can skip it)
+```
+1. npm run build
+2. npm run deploy
 ```
 
 ## Knowledge
