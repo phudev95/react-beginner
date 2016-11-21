@@ -17,16 +17,9 @@ class App extends React.Component {
             fishes: {},
             order: {}
         };
-
-        this.loadSamples = this.loadSamples.bind(this);
-        this.addFish = this.addFish.bind(this);
-        this.updateFish = this.updateFish.bind(this);
-        this.removeFish = this.removeFish.bind(this);
-        this.addToOrder = this.addToOrder.bind(this);
-        this.removeFromOrder = this.removeFromOrder.bind(this);
-
     }
 
+    // Setup Firebase to this Component
     componentWillMount () {
         // This runs right before the <App/> is rendered
         this.ref = base.syncState(`${this.props.params.storeId}/fishes`,{
@@ -43,15 +36,17 @@ class App extends React.Component {
         }
     }
 
+    // Remove Firebase without this Component
     componentWillUnmount () {
         base.removeBinding(this.ref);
     }
 
+    // Update localStorage when order have change
     componentWillUpdate (nextProps, nextState) {
         localStorage.setItem(`order-${this.props.params.storeId}`, JSON.stringify(nextState.order));
     }
 
-    addFish (fish) {
+    addFish = (fish) => {
         // Update our state
         const fishes = {...this.state.fishes};
 
@@ -61,43 +56,43 @@ class App extends React.Component {
 
         // Set state
         this.setState({fishes});
-    }
+    };
 
-    loadSamples () {
+    loadSamples = () => {
         this.setState({
             fishes: sampleFishes
         });
-    }
+    };
 
-    addToOrder (key) {
+    addToOrder = (key) => {
         let order = {...this.state.order};
         order[key] = order[key] + 1 || 1;
 
         this.setState({order});
-    }
+    };
 
-    updateFish (key, fish) {
+    updateFish = (key, fish) => {
         const fishes = {
             ...this.state.fishes,
             [key]: fish
         };
 
         this.setState({fishes});
-    }
+    };
 
-    removeFish (key) {
+    removeFish = (key) => {
         const fishes = {...this.state.fishes};
         fishes[key] = null;
 
         this.setState({fishes});
-    }
+    };
 
-    removeFromOrder (key) {
+    removeFromOrder = (key) => {
         const order = {...this.state.order};
         delete order[key];
 
         this.setState({order});
-    }
+    };
 
     render () {
         return (

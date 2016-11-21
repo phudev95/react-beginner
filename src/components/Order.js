@@ -16,6 +16,7 @@ class Order extends React.Component {
         return (
             <li key={key}>
                 <span>
+                    {/* Add animation to Span component */}
                     <CSSTransitionGroup
                         component="span"
                         className="count"
@@ -48,7 +49,7 @@ class Order extends React.Component {
         return (
             <div className="order-wrap">
                 <h2>Your Order</h2>
-
+                {/* Add animation to UL component */}
                 <CSSTransitionGroup
                     className="order"
                     component="ul"
